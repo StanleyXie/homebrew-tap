@@ -11,7 +11,7 @@ class Tfpipboy < Formula
   on_macos do
     on_intel do
       url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.6.0/tfpipboy_Darwin_x86_64.tar.gz"
-      sha256 "6cde0fee3eb6b9cdcf739166e1ccb4feb19a1c832846bd43e2fc3d1e494d0962"
+      sha256 "5922d212d727c76c9374f2f1acc4904f50404a49f78a17672e728012de5d1924"
 
       def install
         bin.install "tfpipboy"
@@ -19,7 +19,7 @@ class Tfpipboy < Formula
     end
     on_arm do
       url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.6.0/tfpipboy_Darwin_arm64.tar.gz"
-      sha256 "5b91a2bcab474d798ab863356cc8c24db969f2bbcf267f032b994db43fdb2cc7"
+      sha256 "d9c5379289ae8b5f5ae04224a92618c9f4c054cd531bf786a7cbc4885226d31c"
 
       def install
         bin.install "tfpipboy"
@@ -31,7 +31,7 @@ class Tfpipboy < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.6.0/tfpipboy_Linux_x86_64.tar.gz"
-        sha256 "9fbf80a75f4976601379b839370e3e2d5fef23131d2507deda1fa63df5614125"
+        sha256 "01a4ede81127c5e56df791c7bdf3670140b50e2a05d96e48baf30386093754ef"
 
         def install
           bin.install "tfpipboy"
@@ -41,7 +41,7 @@ class Tfpipboy < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.6.0/tfpipboy_Linux_arm64.tar.gz"
-        sha256 "df9915c8b2aec8b119ff24853b0ccd10a5fd645eafb53d0c226039b0bc050e84"
+        sha256 "2eade401dd7bcdcefdf3fcb046f159b2e0c9657928bdb1ae938faf5f1076bd5c"
 
         def install
           bin.install "tfpipboy"

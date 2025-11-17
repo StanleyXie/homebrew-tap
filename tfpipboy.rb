@@ -9,17 +9,17 @@ class Tfpipboy < Formula
   license "MIT"
 
   on_macos do
-    on_intel do
+    if Hardware::CPU.intel?
       url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.6.3/tfpipboy_Darwin_x86_64.tar.gz"
-      sha256 "156ef30265888eec829389c07b9800882ddde1b373c73ce7af6b8acf5d5a89d9"
+      sha256 "9782f84e755153f42fad7f7001e0ef48abece26a4f6cb7bc77a6c4824f9cdc36"
 
       def install
         bin.install "tfpipboy"
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.6.3/tfpipboy_Darwin_arm64.tar.gz"
-      sha256 "fcd892195b6d97e9da572c52cb4f0f54477976fd032a3c944d5460dd039ed252"
+      sha256 "175b77a7d0984d2b625c26c6e0a7b83741bdf074601551df4ccd9b4387c80fe4"
 
       def install
         bin.install "tfpipboy"
@@ -28,24 +28,18 @@ class Tfpipboy < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.6.3/tfpipboy_Linux_x86_64.tar.gz"
-        sha256 "b8be2284d1e3b5aa416d1aec97f5049bc35619014162b419cf9c076114b89ca2"
-
-        def install
-          bin.install "tfpipboy"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.6.3/tfpipboy_Linux_x86_64.tar.gz"
+      sha256 "4d1c5c79ce5617789d6c046c8286b365d247cc3aeaf74432e04d36392e4a38d6"
+      def install
+        bin.install "tfpipboy"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.6.3/tfpipboy_Linux_arm64.tar.gz"
-        sha256 "11b9bfb6085d3de83ba013f84509042fed8a825f0d254b7a39b33cf774133ebd"
-
-        def install
-          bin.install "tfpipboy"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.6.3/tfpipboy_Linux_arm64.tar.gz"
+      sha256 "31f5c37074a9ceefae5a8056b0a5b83b07dc7e90bcd54d7c285d669c6e36771e"
+      def install
+        bin.install "tfpipboy"
       end
     end
   end

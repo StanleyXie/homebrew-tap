@@ -5,21 +5,21 @@
 class Tfpipboy < Formula
   desc "Context-aware Terraform CLI tool with real-time status display"
   homepage "https://github.com/StanleyXie/tfpipboy"
-  version "0.6.5"
+  version "0.7.0-beta.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.6.5/tfpipboy_Darwin_x86_64.tar.gz"
-      sha256 "11d1750a44c964be4cec3d586286ead41b1bbaf03857b19acff280c56f7ece41"
+    on_intel do
+      url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.7.0-beta.1/tfpipboy_Darwin_x86_64.tar.gz"
+      sha256 "03a1d8ed5f617667e8fcf71eec92950253ddc064efe966b235ed1b975523a6c7"
 
       def install
         bin.install "tfpipboy"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.6.5/tfpipboy_Darwin_arm64.tar.gz"
-      sha256 "4ecf8a221034cfc5ce4fa6b1c9a77b7f4991c35c9ebab86fea7ed1c098f9f217"
+    on_arm do
+      url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.7.0-beta.1/tfpipboy_Darwin_arm64.tar.gz"
+      sha256 "914c4eb8b7d9ca1df4ed7dd046963f1769169d97543bc6c57351e62087b9e7ad"
 
       def install
         bin.install "tfpipboy"
@@ -28,18 +28,24 @@ class Tfpipboy < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.6.5/tfpipboy_Linux_x86_64.tar.gz"
-      sha256 "0b7f82e79534fb7a78e6f43945aa01e132f8596948c72e2489966ce36eaa2100"
-      def install
-        bin.install "tfpipboy"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.7.0-beta.1/tfpipboy_Linux_x86_64.tar.gz"
+        sha256 "05e24e33eaa15adddb6c7518e15b183016cf159aae25a95b98f2256038402710"
+
+        def install
+          bin.install "tfpipboy"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.6.5/tfpipboy_Linux_arm64.tar.gz"
-      sha256 "727a07654708a38359b14c2d8194523510fbf060bf3b6d6d24db49ca734b453e"
-      def install
-        bin.install "tfpipboy"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/StanleyXie/tfpipboy/releases/download/v0.7.0-beta.1/tfpipboy_Linux_arm64.tar.gz"
+        sha256 "3c856b2b899c9ef5c3f57caaf6d028797211a40ad6b280d64d4db97b1f71e50b"
+
+        def install
+          bin.install "tfpipboy"
+        end
       end
     end
   end

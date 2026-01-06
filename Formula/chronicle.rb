@@ -5,7 +5,7 @@ class Chronicle < Formula
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/StanleyXie/chronicle/releases/download/v#{version}/chronicle-darwin-arm64.tar.gz"
-    # sha256 will be updated by GitHub Action
+    sha256 "19defccc9a6397617719549f0e6c008855fa209c17469e15f239edf84af51b1a"
   elsif OS.mac? && Hardware::CPU.intel?
     url "https://github.com/StanleyXie/chronicle/releases/download/v#{version}/chronicle-darwin-amd64.tar.gz"
   else

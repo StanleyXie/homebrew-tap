@@ -1,11 +1,11 @@
 class Chronicle < Formula
   desc "AI conversation history extraction and observability tool"
   homepage "https://github.com/StanleyXie/chronicle"
-  version "0.2.0"
+  version "0.2.1"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/StanleyXie/chronicle/releases/download/v#{version}/chronicle-darwin-arm64.tar.gz"
-    sha256 "19defccc9a6397617719549f0e6c008855fa209c17469e15f239edf84af51b1a"
+    url "https://github.com/StanleyXie/chronicle/releases/download/v0.2.1/chronicle-darwin-arm64.tar.gz"
+    sha256 "faa2235dff9cb841ef022466bb0f41987461c2f380b0196b8a88b3a170f69cab"
   elsif OS.mac? && Hardware::CPU.intel?
     url "https://github.com/StanleyXie/chronicle/releases/download/v#{version}/chronicle-darwin-amd64.tar.gz"
   else

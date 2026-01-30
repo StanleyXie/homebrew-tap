@@ -4,22 +4,22 @@
 class Silo < Formula
   desc "Secure Terraform State Gateway with mTLS, OIDC, and governance controls"
   homepage "https://github.com/StanleyXie/silo"
-  version "0.3.15"
+  version "0.3.16"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/StanleyXie/silo/releases/download/v#{version}/silo-darwin-arm64.tar.gz"
-      sha256 "b44016ec864349b3392092805a2aa916d9cce8a3e0ad6d92e5b5fa72d94ed428"
+      sha256 "f2b756a0b72486b6bd971cf74f4749be29d8b038b3feb93a8c1dd8369eb6b986"
     else
       url "https://github.com/StanleyXie/silo/releases/download/v#{version}/silo-darwin-amd64.tar.gz"
-      sha256 "707189dd9ad8e22f2b9e699a432ff26bfa1546dc9a8f2e82f0942e0e3a10cf9a"
+      sha256 "2428a34d15f2c271d751718fe8d119584903a2dd3c864b8714774c7619aab1bd"
     end
   end
 
   on_linux do
     url "https://github.com/StanleyXie/silo/releases/download/v#{version}/silo-linux-amd64.tar.gz"
-    sha256 "3aa8833d656cc850ab837e8bdd8a9c8f62b9215aed081f082ed8ab7e79d4c380"
+    sha256 "e1571be4c89fc38b0bcbdc0b8a0e2ebf5554845ebd2044582929143ff1db3f86"
   end
 
   def install

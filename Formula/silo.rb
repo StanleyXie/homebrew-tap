@@ -10,16 +10,16 @@ class Silo < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/StanleyXie/silo/releases/download/v#{version}/silo-darwin-arm64.tar.gz"
-      sha256 "44d6dac6c4358e9a2731073bdf696f9911ba0eb7ce7ea9c3fc3f329286a8fa6c"
+      sha256 "28c18a37696b45c2178d13c34db57b1e92966577b4ea408b4a1f6c3e1fd8cf15"
     else
       url "https://github.com/StanleyXie/silo/releases/download/v#{version}/silo-darwin-amd64.tar.gz"
-      sha256 "c56979a17c73428d1e3672fe80b8c30aa7eb40bc7ea2b59c18be0c23833c42ff"
+      sha256 "a3490b72337381d0799b529daaa06817bf98afbaf9e1b00d0a436d74d27c8884"
     end
   end
 
   on_linux do
     url "https://github.com/StanleyXie/silo/releases/download/v#{version}/silo-linux-amd64.tar.gz"
-    sha256 "be4179f82e5ee7d40f14b3ffd9564e8e308434be15d6dc6ab8796ef6d39606f3"
+    sha256 "8ec5cf4408fdc50bd9fa2f1c11fa65ec80d58c2f21ec8e0d23840758ff529a9d"
   end
 
   def install
